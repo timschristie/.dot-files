@@ -68,6 +68,7 @@ set lbr             " Put line breaks at word ends, not in the middle of charact
 au BufNewFile,BufRead *.thtml setfiletype php
 au BufNewFile,BufRead *.pl setfiletype prolog
 au BufNewFile,BufRead *.php call s:php_init()
+autocmd BufNewFile,BufRead *.csv setf csv
 
 let g:xml_syntax_folding=1
 au FileType xml setlocal foldmethod=syntax
@@ -82,8 +83,15 @@ endfunction
 " Enable modeline (Vim settings in a file)
 set modeline
 
+" enable per-directory .vimrc files
+set exrc
+set secure
+
 " Default file type
 set fileformat=unix
+
+" Man page plugin
+runtime ftplugin/man.vim
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Editing mappings
