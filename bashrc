@@ -27,7 +27,7 @@ export PKG_CONFIG_PATH
 export MANPATH
 
 export ACK_OPTIONS="--pager=less --type-add php=.ctp --type-add js=.coffee"
-export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8 # This helps things play nice
 export TZ='Australia/Hobart'
 export NODE_PATH=$HOME/local/node/lib/node_modules
 umask 002
