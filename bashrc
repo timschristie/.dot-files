@@ -27,6 +27,7 @@ export PKG_CONFIG_PATH
 export MANPATH
 
 export ACK_OPTIONS="--pager=less --type-add php=.ctp --type-add js=.coffee"
+export LANG=en_US.UTF-8
 export TZ='Australia/Hobart'
 export NODE_PATH=$HOME/local/node/lib/node_modules
 umask 002
@@ -183,6 +184,15 @@ alias ++magic=". /etc/bash_completion"
 # ------------------
 
 # Source in system bash completion, if it exists# The bit of magic makes it run asynchronously or something. See http://superuser.com/q/267771
+if [ -f "/usr/share/bash-completion/bash_completion" ] ; then
+	trap 'source /usr/share/bash-completion/bash_completion ; trap USR1' USR1
+	{ sleep 0.1 ; builtin kill -USR1 $$ ; } & disown
+fi
+
+# Source in system git completion, if it exists
+if [ -f "/usr/share/git/completion/git-completion.bash" ] ; then
+	. "/usr/share/git/completion/git-completion.bash"
+fi
 
 # Search backwards and forwards through history easier
 if echo "$-" | grep -q 'i' ; then
