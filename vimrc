@@ -58,6 +58,10 @@ nnoremap <Delete> :nohlsearch <cr>
 nnoremap / /\v
 vnoremap / /\v
 
+"Persistent undo: it's sometimes handy to remember this after closing a file
+set undodir=~/.vim/tmp
+set undofile
+
 " Improved status line: always visible, shows [+] modification, read only
 " status, git branch, filetype, username, hostname
 set laststatus=2
@@ -143,6 +147,15 @@ vmap <silent> <C-j> :m'>+<CR>`<my`>mzgv`yo`z
 vmap <silent> <C-k> :m'<-2<CR>`>my`<mzgv`yo`z
 vmap <silent> <C-down> :m'>+<CR>`<my`>mzgv`yo`z
 vmap <silent> <C-up> :m'<-2<CR>`>my`<mzgv`yo`z
+
+"Hit space to clear search results
+nnoremap <silent> <Space> :silent noh<Bar>echo<CR>
+
+"Enable better traversal of wrapped lines
+nnoremap j gj
+nnoremap k gk
+nnoremap <Down> gj
+nnoremap <Up> gk
 
 " Nul (aka. Ctrl-Space) does dicky things. Lets stop that.
 imap <Nul> <Nop>
