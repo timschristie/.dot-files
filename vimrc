@@ -88,6 +88,7 @@ set showfulltag     " Auto-complete things?
 
 " Indentation settings
 set tabstop=4       " I like four space tabs for indenting
+set softtabstop=4   " Four spaces will act like tabs (think Python)
 set shiftwidth=4    " I like four space tabs for indenting
 set smartindent     " Syntax aware indenting
 set autoindent      " Auto indent
