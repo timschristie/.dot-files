@@ -70,7 +70,7 @@ set statusline=%<%f\ ❖\ env:\ [%Y][%{$USER}][%{hostname()}]\ %(❖\ sts:\ %h%m
 
 " Appearance settings
 set background=dark
-colorscheme my
+colorscheme desert256
 set number          " Numbers in the margin
 set showmatch       " Show matching brackets.
 
