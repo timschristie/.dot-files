@@ -194,6 +194,11 @@ if [ -f "/usr/share/git/completion/git-completion.bash" ] ; then
 	. "/usr/share/git/completion/git-completion.bash"
 fi
 
+# Source virtualenvwrapper, if it exists
+if [ -f "/usr/bin/virtualenvwrapper.sh" ] ; then
+	. "/usr/bin/virtualenvwrapper.sh"
+fi
+
 # Search backwards and forwards through history easier
 if echo "$-" | grep -q 'i' ; then
 	bind '"\e[A": history-search-backward'
