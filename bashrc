@@ -41,7 +41,7 @@ alias vi='vim -p'
 export LESS='FRSX'
 
 # Dont grep .svn folders.
-export GREP_OPTIONS="--exclude-dir=\.svn"
+export GREP_OPTIONS="-rI --color --exclude-dir=\.bzr --exclude-dir=\.git --exclude-dir=\.hg --exclude-dir=\.svn --exclude-dir=build --exclude-dir=dist --exclude=tags $*"
 
 # Python
 # ------
